@@ -7,8 +7,11 @@ const progressBarPercents = [97, 89, 85, 50, 30, 30, 30, 20];
 
 window.addEventListener("scroll", () => {
   mainFn();
+  
 });
-
+window.addEventListener("load", ()=>{
+  myFunction();
+})
 const mainFn = () => {
   if (window.pageYOffset >= navbarOffsetTop) {
     navbar.classList.add("sticky");
@@ -39,3 +42,13 @@ mainFn();
 window.addEventListener("resize", () => {
   window.location.reload();
 });
+
+function myFunction(){
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage(){
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+// window.addEventListener('load', myFunction);
